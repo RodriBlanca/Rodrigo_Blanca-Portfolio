@@ -5,7 +5,7 @@
 .body {
   margin: 0;
   padding: 0;
-  background-color: #fdfff5;
+  background-color: #fcfff1;
 }
 
 /* MOBILE */
@@ -20,6 +20,7 @@
         grid-template-columns: repeat(9, 1fr);
     -ms-grid-rows: 300px 70px 1fr 300px;
         grid-template-rows: 300px 70px 1fr 300px;
+    color: #001931;
   }
   /* HERO */
   .hero {
@@ -34,7 +35,6 @@
   }
   /* HEADER */
   .header {
-    color: #001931;
     height: 70px;
     background-color: rgba(255, 255, 255, 0.1);
     display: -webkit-box;
@@ -81,11 +81,11 @@
     font-family: "B612 Mono", monospace;
     font-size: 25px;
     margin: 0 10px;
-    color: #001931;
     -webkit-transition: color, text-shadow;
     transition: color, text-shadow;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
+    color: #001931;
   }
   .nav-menu__link:hover {
     color: #e30613;
@@ -112,7 +112,7 @@
     -ms-grid-rows: (1fr)[4];
         grid-template-rows: repeat(4, 1fr);
   }
-  /* ABOUT ME */
+  /* ABOUT ME SECTION*/
   .about-me {
     -ms-grid-column: 2;
     -ms-grid-column-span: 7;
@@ -124,11 +124,49 @@
   }
   .about-me__description {
     font-size: 25px;
-    color: #001931;
     font-family: "B612 Mono", monospace;
     text-align: justify;
   }
-  /* CONTACT */
+  /* SKILLS SECTION */
+  .skills {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 7;
+    grid-column: 2/9;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    margin: 50px;
+  }
+  .skills-title {
+    font-family: "B612 Mono", monospace;
+    font-size: 30px;
+    color: #e30613;
+  }
+  .skills-list {
+    list-style: none;
+    padding: 0;
+  }
+  .skills-list__item {
+    font-family: "B612 Mono", monospace;
+    font-size: 23px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 10px;
+  }
+  .skills-list__item p {
+    margin: 0;
+  }
+  .skills-list__item svg {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    fill: #001931;
+  }
+  /* CONTACT SECTION*/
   .contact {
     -ms-grid-column: 4;
     -ms-grid-column-span: 3;
@@ -186,7 +224,7 @@
   .footer-title {
     font-size: 50px;
     font-family: "B612 Mono", monospace;
-    color: #fdfff5;
+    color: #fcfff1;
   }
   .social {
     display: -webkit-box;
@@ -209,14 +247,14 @@
   }
   .social-linkedin__text {
     font-family: "B612 Mono", monospace;
-    color: #fdfff5;
+    color: #fcfff1;
     font-size: 25px;
     margin: 0;
   }
   .social-linkedin__img {
     height: 35px;
     width: 35px;
-    fill: #fdfff5;
+    fill: #fcfff1;
     -webkit-transition: fill;
     transition: fill;
     -webkit-transition-duration: 0.5s;
@@ -237,14 +275,14 @@
   }
   .social-github__text {
     font-family: "B612 Mono", monospace;
-    color: #fdfff5;
+    color: #fcfff1;
     font-size: 25px;
     margin: 0;
   }
   .social-github__img {
     height: 35px;
     width: 35px;
-    fill: #fdfff5;
+    fill: #fcfff1;
     -webkit-transition: fill;
     transition: fill;
     -webkit-transition-duration: 0.5s;
