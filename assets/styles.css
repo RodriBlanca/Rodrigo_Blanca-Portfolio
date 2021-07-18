@@ -1,0 +1,103 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono&display=swap");
+/* VARIABLES */
+/* ESTILOS GENERALES */
+.body {
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+}
+
+/* MOBILE */
+@media screen and (min-width: 1024px) {
+  /* BODY */
+  .body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[9];
+        grid-template-columns: repeat(9, 1fr);
+    -ms-grid-rows: 300px 70px 1fr 300px;
+        grid-template-rows: 300px 70px 1fr 300px;
+  }
+  /* HERO */
+  .hero {
+    height: 300px;
+    background-color: black;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    grid-column: 1/10;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  /* HEADER */
+  .header {
+    height: 70px;
+    background-color: rgba(112, 112, 112, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    -webkit-box-shadow: 6px 6px 6px #888888;
+            box-shadow: 6px 6px 6px #888888;
+    font-family: 'B612 Mono', monospace;
+    font-size: 18px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    grid-column: 1/10;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  .header h1 {
+    margin-left: 15px;
+  }
+  /* NAV */
+  .nav {
+    margin-right: 15px;
+  }
+  .nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+  }
+  .nav-menu__link {
+    text-decoration: none;
+    font-family: 'B612 Mono', monospace;
+    font-size: 25px;
+    margin: 0 10px;
+    color: black;
+  }
+  .nav-menu__link:hover {
+    color: crimson;
+  }
+  .nav-menu__divisor {
+    font-family: 'B612 Mono', monospace;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.3);
+  }
+  .main {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    grid-column: 1/10;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+  /* ABOUT ME */
+  .about-me__description {
+    color: red;
+  }
+}
+
+/* TABLET */
+/* DESKTOP */
+/*# sourceMappingURL=styles.css.map */
