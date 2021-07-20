@@ -4,7 +4,9 @@
 /* VARIABLES */
 $azul: #001931;
 $rojo: #e30613;
-$crema: #fcfff1;
+$crema: #fff8e7;
+// $crema: white;
+$sombra: rgb(136, 136, 136);
 
 /* ESTILOS GENERALES */
 .body {
@@ -44,7 +46,7 @@ $crema: #fcfff1;
     align-items: center;
     position: sticky;
     top: 0px;
-    box-shadow: 6px 6px 6px rgb(136, 136, 136);
+    box-shadow: 6px 6px 6px $sombra;
     font-family: "B612 Mono", monospace;
     font-size: 18px;
     grid-column: 1/10;
@@ -54,7 +56,7 @@ $crema: #fcfff1;
 
     &-title {
       margin-left: 15px;
-      color: $rojo;
+      color: $azul;
     }
   }
 
@@ -77,7 +79,7 @@ $crema: #fcfff1;
 
         &:hover {
           color: $rojo;
-          text-shadow: 2.3px 2.3px 3px rgb(136, 136, 136);
+          text-shadow: 2.3px 2.3px 3px $sombra;
         }
       }
 
@@ -97,7 +99,7 @@ $crema: #fcfff1;
     /* GRID DEL MAIN */
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 0.5fr);
   }
 
   /* ABOUT ME SECTION*/
@@ -105,6 +107,12 @@ $crema: #fcfff1;
     grid-column: 2/9;
     grid-row: 1/2;
     margin: 50px;
+
+    &__title {
+      font-family: "B612 Mono", monospace;
+      font-size: 28px;
+      color: $rojo;
+    }
 
     &__description {
       font-size: 25px;
@@ -118,10 +126,11 @@ $crema: #fcfff1;
     grid-column: 2/9;
     grid-row: 2/3;
     margin: 50px;
+    width: 280px;
 
     &-title {
       font-family: "B612 Mono", monospace;
-      font-size: 30px;
+      font-size: 28px;
       color: $rojo;
     }
 
@@ -134,7 +143,12 @@ $crema: #fcfff1;
         font-size: 23px;
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
+
+        &:hover {
+          background-color: $azul;
+          color: $crema;
+        }
 
         & p {
           margin: 0;
@@ -150,28 +164,92 @@ $crema: #fcfff1;
     }
   }
 
+  /* PROJECTS SECTION */
+  .projects {
+    grid-column: 2/9;
+    grid-row: 3/4;
+    margin: 50px;
+
+    &-title {
+      font-family: "B612 Mono", monospace;
+      font-size: 28px;
+      color: $rojo;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .project-card {
+    height: 400px;
+    width: 350px;
+    background-color: $azul;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+
+    &:hover {
+      box-shadow: 8px 8px 8px $sombra;
+    }
+
+    &__page,
+    &__repository {
+      font-family: "B612 Mono", monospace;
+      font-size: 15px;
+      height: 35px;
+      width: 150px;
+      margin-bottom: 15px;
+      background-color: $rojo;
+      border: 0;
+      color: $crema;
+      transition-property: background-color, color, border;
+      transition-duration: 0.7s;
+
+      &:hover {
+        color: $rojo;
+        background-color: $crema;
+        // border: 1px solid $rojo;
+      }
+    }
+  }
+
   /* CONTACT SECTION*/
   .contact {
-    grid-column: 4/7;
+    grid-column: 2/9;
     grid-row: 4/5;
-    display: flex;
-    flex-direction: column;
+    margin: 50px;
 
-    &-label {
-      font-size: 25px;
+    &-title {
       font-family: "B612 Mono", monospace;
-      color: $azul;
+      font-size: 28px;
+      color: $rojo;
     }
 
-    &-input {
-      height: 25px;
-      font-size: 20px;
-      color: $azul;
-    }
+    &-form {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
 
-    &-message {
-      resize: none;
-      font-size: 20px;
+      &__label {
+        font-size: 25px;
+        font-family: "B612 Mono", monospace;
+        color: $azul;
+      }
+
+      &__input {
+        height: 25px;
+        font-size: 20px;
+        color: $azul;
+      }
+
+      &__message {
+        resize: none;
+        font-size: 20px;
+      }
     }
   }
 

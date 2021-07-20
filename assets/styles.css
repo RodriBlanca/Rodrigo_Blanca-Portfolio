@@ -5,7 +5,7 @@
 .body {
   margin: 0;
   padding: 0;
-  background-color: #fcfff1;
+  background-color: #fff8e7;
 }
 
 /* MOBILE */
@@ -64,7 +64,7 @@
   }
   .header-title {
     margin-left: 15px;
-    color: #e30613;
+    color: #001931;
   }
   /* NAV */
   .nav {
@@ -109,8 +109,8 @@
     display: grid;
     -ms-grid-columns: (1fr)[9];
         grid-template-columns: repeat(9, 1fr);
-    -ms-grid-rows: (1fr)[4];
-        grid-template-rows: repeat(4, 1fr);
+    -ms-grid-rows: (0.5fr)[4];
+        grid-template-rows: repeat(4, 0.5fr);
   }
   /* ABOUT ME SECTION*/
   .about-me {
@@ -121,6 +121,11 @@
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     margin: 50px;
+  }
+  .about-me__title {
+    font-family: "B612 Mono", monospace;
+    font-size: 28px;
+    color: #e30613;
   }
   .about-me__description {
     font-size: 25px;
@@ -136,10 +141,11 @@
     -ms-grid-row-span: 1;
     grid-row: 2/3;
     margin: 50px;
+    width: 280px;
   }
   .skills-title {
     font-family: "B612 Mono", monospace;
-    font-size: 30px;
+    font-size: 28px;
     color: #e30613;
   }
   .skills-list {
@@ -155,7 +161,11 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+  }
+  .skills-list__item:hover {
+    background-color: #001931;
+    color: #fff8e7;
   }
   .skills-list__item p {
     margin: 0;
@@ -166,14 +176,87 @@
     margin-right: 10px;
     fill: #001931;
   }
+  /* PROJECTS SECTION */
+  .projects {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 7;
+    grid-column: 2/9;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    margin: 50px;
+  }
+  .projects-title {
+    font-family: "B612 Mono", monospace;
+    font-size: 28px;
+    color: #e30613;
+  }
+  .projects-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .project-card {
+    height: 400px;
+    width: 350px;
+    background-color: #001931;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-transition-property: -webkit-box-shadow;
+    transition-property: -webkit-box-shadow;
+    transition-property: box-shadow;
+    transition-property: box-shadow, -webkit-box-shadow;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+  }
+  .project-card:hover {
+    -webkit-box-shadow: 8px 8px 8px #888888;
+            box-shadow: 8px 8px 8px #888888;
+  }
+  .project-card__page, .project-card__repository {
+    font-family: "B612 Mono", monospace;
+    font-size: 15px;
+    height: 35px;
+    width: 150px;
+    margin-bottom: 15px;
+    background-color: #e30613;
+    border: 0;
+    color: #fff8e7;
+    -webkit-transition-property: background-color, color, border;
+    transition-property: background-color, color, border;
+    -webkit-transition-duration: 0.7s;
+            transition-duration: 0.7s;
+  }
+  .project-card__page:hover, .project-card__repository:hover {
+    color: #e30613;
+    background-color: #fff8e7;
+  }
   /* CONTACT SECTION*/
   .contact {
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 3;
-    grid-column: 4/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 7;
+    grid-column: 2/9;
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     grid-row: 4/5;
+    margin: 50px;
+  }
+  .contact-title {
+    font-family: "B612 Mono", monospace;
+    font-size: 28px;
+    color: #e30613;
+  }
+  .contact-form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -181,18 +264,19 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 800px;
   }
-  .contact-label {
+  .contact-form__label {
     font-size: 25px;
     font-family: "B612 Mono", monospace;
     color: #001931;
   }
-  .contact-input {
+  .contact-form__input {
     height: 25px;
     font-size: 20px;
     color: #001931;
   }
-  .contact-message {
+  .contact-form__message {
     resize: none;
     font-size: 20px;
   }
@@ -224,7 +308,7 @@
   .footer-title {
     font-size: 50px;
     font-family: "B612 Mono", monospace;
-    color: #fcfff1;
+    color: #fff8e7;
   }
   .social {
     display: -webkit-box;
@@ -247,14 +331,14 @@
   }
   .social-linkedin__text {
     font-family: "B612 Mono", monospace;
-    color: #fcfff1;
+    color: #fff8e7;
     font-size: 25px;
     margin: 0;
   }
   .social-linkedin__img {
     height: 35px;
     width: 35px;
-    fill: #fcfff1;
+    fill: #fff8e7;
     -webkit-transition: fill;
     transition: fill;
     -webkit-transition-duration: 0.5s;
@@ -275,14 +359,14 @@
   }
   .social-github__text {
     font-family: "B612 Mono", monospace;
-    color: #fcfff1;
+    color: #fff8e7;
     font-size: 25px;
     margin: 0;
   }
   .social-github__img {
     height: 35px;
     width: 35px;
-    fill: #fcfff1;
+    fill: #fff8e7;
     -webkit-transition: fill;
     transition: fill;
     -webkit-transition-duration: 0.5s;
