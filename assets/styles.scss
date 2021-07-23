@@ -1,12 +1,12 @@
 /* GOOGLE FONTS */
-@import url("https://fonts.googleapis.com/css2?family=B612+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 /* VARIABLES */
 $azul: #001931;
 $rojo: #e30613;
 $crema: #fff8e7;
-// $crema: white;
 $sombra: rgb(136, 136, 136);
+$letter: 'Raleway', sans-serif;
 
 /* ESTILOS GENERALES */
 .body {
@@ -19,22 +19,79 @@ $sombra: rgb(136, 136, 136);
 
 /* TABLET */
 
-/* DESKTOP */
+/* DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
   /* BODY */
   .body {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: 300px 70px 1fr 300px;
+    grid-template-rows: 100vh 70px 1fr 300px;
     color: $azul;
   }
 
   /* HERO */
   .hero {
-    height: 300px;
+    height: 100vh;
     background-color: $azul;
     grid-column: 1/10;
     grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-introduction {
+      color: $crema;
+      font-family: $letter;
+      animation-name: introduction;
+      animation-duration: 1s;
+      font-size: 40px;
+      margin: 0;
+      opacity: 0;
+    }
+
+    &:before {
+      content: 'RODRIGO';
+      font-size: 15vw;
+      position: absolute;
+      font-family: $letter;
+      -webkit-text-stroke: 2px white;
+      color: transparent;
+      top: 0;
+      left: 0;
+      animation-name: introduction-before;
+      animation-duration: 1s;
+    }
+
+    @keyframes introduction-before {
+      0% {
+        transform: translateX(-600px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    &:after {
+      content: 'BLANCA';
+      font-size: 15vw;
+      position: absolute;
+      font-family: $letter;
+      -webkit-text-stroke: 2px $rojo;
+      color: transparent;
+      bottom: 0;
+      right: 0;
+      animation-name: introduction-after;
+      animation-duration: 1s;
+    }
+
+    @keyframes introduction-after {
+      0% {
+        transform: translateX(600px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
 
   /* HEADER */
@@ -47,7 +104,7 @@ $sombra: rgb(136, 136, 136);
     position: sticky;
     top: 0px;
     box-shadow: 6px 6px 6px $sombra;
-    font-family: "B612 Mono", monospace;
+    font-family: $letter;
     font-size: 18px;
     grid-column: 1/10;
     grid-row: 2/3;
@@ -57,6 +114,12 @@ $sombra: rgb(136, 136, 136);
     &-title {
       margin-left: 15px;
       color: $azul;
+    }
+
+    &-line__blue {
+      height: 10px;
+      width: 200px;
+      background-color: $azul;
     }
   }
 
@@ -70,7 +133,7 @@ $sombra: rgb(136, 136, 136);
 
       &__link {
         text-decoration: none;
-        font-family: "B612 Mono", monospace;
+        font-family: $letter;
         font-size: 25px;
         margin: 0 10px;
         transition: color, text-shadow;
@@ -84,7 +147,7 @@ $sombra: rgb(136, 136, 136);
       }
 
       &__divisor {
-        font-family: "B612 Mono", monospace;
+        font-family: $letter;
         font-size: 25px;
         color: rgba(0, 0, 0, 0.3);
       }
@@ -106,17 +169,46 @@ $sombra: rgb(136, 136, 136);
   .about-me {
     grid-column: 2/9;
     grid-row: 1/2;
-    margin: 50px;
+    margin: 50px 0;
+    opacity: 0;
+    
+    &__animation {
+      animation-name: animation-description;
+      animation-duration: 1s;
+    }
+
+    @keyframes animation-description {
+      0% {
+        transform: translateX(-300px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
 
     &__title {
-      font-family: "B612 Mono", monospace;
-      font-size: 28px;
+      font-family: $letter;
+      font-size: 35px;
       color: $rojo;
+      animation-name: about-me__title;
+      animation-duration: 0.5s;
+
+      @keyframes about-me__title {
+        0% {
+          transform: translateX(-300px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 100;
+        }
+      }
     }
 
     &__description {
-      font-size: 25px;
-      font-family: "B612 Mono", monospace;
+      font-size: 30px;
+      font-family: $letter;
       text-align: justify;
     }
   }
@@ -125,12 +217,28 @@ $sombra: rgb(136, 136, 136);
   .skills {
     grid-column: 2/9;
     grid-row: 2/3;
-    margin: 50px;
+    margin-bottom: 50px;
     width: 280px;
+    opacity: 0;
+
+    &-animation {
+      animation-name: skills-animation;
+      animation-duration: 1s;
+    }
+
+    @keyframes skills-animation {
+      0% {
+        transform: translateY(300px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
 
     &-title {
-      font-family: "B612 Mono", monospace;
-      font-size: 28px;
+      font-family: $letter;
+      font-size: 35px;
       color: $rojo;
     }
 
@@ -139,8 +247,8 @@ $sombra: rgb(136, 136, 136);
       padding: 0;
 
       &__item {
-        font-family: "B612 Mono", monospace;
-        font-size: 23px;
+        font-family: $letter;
+        font-size: 30px;
         display: flex;
         align-items: center;
         margin-bottom: 30px;
@@ -168,11 +276,11 @@ $sombra: rgb(136, 136, 136);
   .projects {
     grid-column: 2/9;
     grid-row: 3/4;
-    margin: 50px;
+    margin-bottom: 25px;
 
     &-title {
-      font-family: "B612 Mono", monospace;
-      font-size: 28px;
+      font-family: $letter;
+      font-size: 35px;
       color: $rojo;
     }
 
@@ -184,7 +292,7 @@ $sombra: rgb(136, 136, 136);
 
   .project-card {
     height: 400px;
-    width: 350px;
+    width: 250px;
     background-color: $azul;
     display: flex;
     align-items: flex-end;
@@ -198,11 +306,11 @@ $sombra: rgb(136, 136, 136);
 
     &__page,
     &__repository {
-      font-family: "B612 Mono", monospace;
+      font-family: $letter;
       font-size: 15px;
       height: 35px;
-      width: 150px;
-      margin-bottom: 15px;
+      width: 110px;
+      margin-bottom: 10px;
       background-color: $rojo;
       border: 0;
       color: $crema;
@@ -224,8 +332,8 @@ $sombra: rgb(136, 136, 136);
     margin: 50px;
 
     &-title {
-      font-family: "B612 Mono", monospace;
-      font-size: 28px;
+      font-family: $letter;
+      font-size: 35px;
       color: $rojo;
     }
 
@@ -236,7 +344,7 @@ $sombra: rgb(136, 136, 136);
 
       &__label {
         font-size: 25px;
-        font-family: "B612 Mono", monospace;
+        font-family: $letter;
         color: $azul;
       }
 
@@ -249,6 +357,34 @@ $sombra: rgb(136, 136, 136);
       &__message {
         resize: none;
         font-size: 20px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: space-between;
+
+      &__send,
+      &__reset {
+        height: 30px;
+        width: 150px;
+        margin-top: 25px; 
+
+        &:hover {
+          box-shadow: 2px 2px 2px $sombra;
+        }
+      }
+
+      &__send {
+        background-color: $rojo;
+        color: $crema;
+        border: 1px solid $rojo;
+      }
+
+      &__reset {
+        background-color: $azul;
+        color: $crema;
+        border: 1px solid $azul;
       }
     }
   }
@@ -267,7 +403,7 @@ $sombra: rgb(136, 136, 136);
 
     &-title {
       font-size: 50px;
-      font-family: "B612 Mono", monospace;
+      font-family: $letter;
       color: $crema;
     }
   }
@@ -283,7 +419,7 @@ $sombra: rgb(136, 136, 136);
       align-items: center;
 
       &__text {
-        font-family: "B612 Mono", monospace;
+        font-family: $letter;
         color: $crema;
         font-size: 25px;
         margin: 0;
@@ -296,6 +432,54 @@ $sombra: rgb(136, 136, 136);
         transition: fill;
         transition-duration: 0.5s;
         margin: 20px;
+        animation-name: social-icon;
+        animation-duration: .2s;
+
+        @keyframes social-icon {
+          0%{
+            transform: rotate(0);
+          }
+
+          10% {
+            transform: rotate(40deg);
+          }
+
+          20% {
+            transform: rotate(80deg);
+          }
+
+          30%{
+            transform: rotate(120deg);
+          }
+
+          40% {
+            transform: rotate(160deg);
+          }
+
+          50%{
+            transform: rotate(180deg);
+          }
+
+          60%{
+            transform: rotate(220deg);
+          }
+
+          70% {
+            transform: rotate(260deg);
+          }
+
+          80% {
+            transform: rotate(300deg);
+          }
+
+          90% {
+            transform: rotate(340deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
 
         &:hover {
           fill: $rojo;
@@ -309,7 +493,7 @@ $sombra: rgb(136, 136, 136);
       align-items: center;
 
       &__text {
-        font-family: "B612 Mono", monospace;
+        font-family: $letter;
         color: $crema;
         font-size: 25px;
         margin: 0;
@@ -328,5 +512,12 @@ $sombra: rgb(136, 136, 136);
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project-card {
+    height: 400px;
+    width: 300px;
   }
 }
