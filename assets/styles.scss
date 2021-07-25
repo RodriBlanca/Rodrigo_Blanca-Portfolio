@@ -1,12 +1,12 @@
 /* GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 /* VARIABLES */
 $azul: #001931;
 $rojo: #e30613;
 $crema: #fff8e7;
 $sombra: rgb(136, 136, 136);
-$letter: 'Raleway', sans-serif;
+$letter: "Raleway", sans-serif;
 
 /* ESTILOS GENERALES */
 .body {
@@ -47,10 +47,21 @@ $letter: 'Raleway', sans-serif;
       font-size: 40px;
       margin: 0;
       opacity: 0;
+      animation: introduction-animation;
+      animation-duration: 3s;
+    }
+
+    @keyframes introduction-animation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     &:before {
-      content: 'RODRIGO';
+      content: "RODRIGO";
       font-size: 15vw;
       position: absolute;
       font-family: $letter;
@@ -64,7 +75,7 @@ $letter: 'Raleway', sans-serif;
 
     @keyframes introduction-before {
       0% {
-        transform: translateX(-600px);
+        transform: translateX(-1000px);
       }
       100% {
         transform: translateX(0);
@@ -72,7 +83,7 @@ $letter: 'Raleway', sans-serif;
     }
 
     &:after {
-      content: 'BLANCA';
+      content: "BLANCA";
       font-size: 15vw;
       position: absolute;
       font-family: $letter;
@@ -86,7 +97,7 @@ $letter: 'Raleway', sans-serif;
 
     @keyframes introduction-after {
       0% {
-        transform: translateX(600px);
+        transform: translateX(1000px);
       }
       100% {
         transform: translateX(0);
@@ -140,10 +151,10 @@ $letter: 'Raleway', sans-serif;
         transition-duration: 0.5s;
         color: $azul;
 
-        &:hover {
-          color: $rojo;
-          text-shadow: 2.3px 2.3px 3px $sombra;
-        }
+        // &:hover {
+        //   color: $rojo;
+        //   text-shadow: 2.3px 2.3px 3px $sombra;
+        // }
       }
 
       &__divisor {
@@ -152,6 +163,11 @@ $letter: 'Raleway', sans-serif;
         color: rgba(0, 0, 0, 0.3);
       }
     }
+  }
+
+  .nav-animation {
+    color: $rojo;
+    text-shadow: 2.3px 2.3px 3px $sombra;
   }
 
   .main {
@@ -171,7 +187,7 @@ $letter: 'Raleway', sans-serif;
     grid-row: 1/2;
     margin: 50px 0;
     opacity: 0;
-    
+
     &__animation {
       animation-name: animation-description;
       animation-duration: 1s;
@@ -368,7 +384,7 @@ $letter: 'Raleway', sans-serif;
       &__reset {
         height: 30px;
         width: 150px;
-        margin-top: 25px; 
+        margin-top: 25px;
 
         &:hover {
           box-shadow: 2px 2px 2px $sombra;
@@ -395,7 +411,6 @@ $letter: 'Raleway', sans-serif;
     grid-row: 4/5;
     height: 300px;
     background-color: $azul;
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -408,10 +423,61 @@ $letter: 'Raleway', sans-serif;
     }
   }
 
+  .rotate-animation {
+    animation-name: social-icon;
+    animation-duration: 0.2s;
+  }
+
   .social {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+
+    @keyframes social-icon {
+      0% {
+        transform: rotate(0);
+      }
+
+      10% {
+        transform: rotate(40deg);
+      }
+
+      20% {
+        transform: rotate(80deg);
+      }
+
+      30% {
+        transform: rotate(120deg);
+      }
+
+      40% {
+        transform: rotate(160deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      60% {
+        transform: rotate(220deg);
+      }
+
+      70% {
+        transform: rotate(260deg);
+      }
+
+      80% {
+        transform: rotate(300deg);
+      }
+
+      90% {
+        transform: rotate(340deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
     &-linkedin {
       display: flex;
@@ -432,54 +498,6 @@ $letter: 'Raleway', sans-serif;
         transition: fill;
         transition-duration: 0.5s;
         margin: 20px;
-        animation-name: social-icon;
-        animation-duration: .2s;
-
-        @keyframes social-icon {
-          0%{
-            transform: rotate(0);
-          }
-
-          10% {
-            transform: rotate(40deg);
-          }
-
-          20% {
-            transform: rotate(80deg);
-          }
-
-          30%{
-            transform: rotate(120deg);
-          }
-
-          40% {
-            transform: rotate(160deg);
-          }
-
-          50%{
-            transform: rotate(180deg);
-          }
-
-          60%{
-            transform: rotate(220deg);
-          }
-
-          70% {
-            transform: rotate(260deg);
-          }
-
-          80% {
-            transform: rotate(300deg);
-          }
-
-          90% {
-            transform: rotate(340deg);
-          }
-
-          100% {
-            transform: rotate(360deg);
-          }
-        }
 
         &:hover {
           fill: $rojo;

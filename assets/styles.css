@@ -52,9 +52,29 @@
     font-size: 40px;
     margin: 0;
     opacity: 0;
+    -webkit-animation: introduction-animation;
+            animation: introduction-animation;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+  }
+  @-webkit-keyframes introduction-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes introduction-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   .hero:before {
-    content: 'RODRIGO';
+    content: "RODRIGO";
     font-size: 15vw;
     position: absolute;
     font-family: "Raleway", sans-serif;
@@ -69,8 +89,8 @@
   }
   @-webkit-keyframes introduction-before {
     0% {
-      -webkit-transform: translateX(-600px);
-              transform: translateX(-600px);
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
     }
     100% {
       -webkit-transform: translateX(0);
@@ -79,8 +99,8 @@
   }
   @keyframes introduction-before {
     0% {
-      -webkit-transform: translateX(-600px);
-              transform: translateX(-600px);
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
     }
     100% {
       -webkit-transform: translateX(0);
@@ -88,7 +108,7 @@
     }
   }
   .hero:after {
-    content: 'BLANCA';
+    content: "BLANCA";
     font-size: 15vw;
     position: absolute;
     font-family: "Raleway", sans-serif;
@@ -103,8 +123,8 @@
   }
   @-webkit-keyframes introduction-after {
     0% {
-      -webkit-transform: translateX(600px);
-              transform: translateX(600px);
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
     }
     100% {
       -webkit-transform: translateX(0);
@@ -113,8 +133,8 @@
   }
   @keyframes introduction-after {
     0% {
-      -webkit-transform: translateX(600px);
-              transform: translateX(600px);
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
     }
     100% {
       -webkit-transform: translateX(0);
@@ -180,14 +200,14 @@
             transition-duration: 0.5s;
     color: #001931;
   }
-  .nav-menu__link:hover {
-    color: #e30613;
-    text-shadow: 2.3px 2.3px 3px #888888;
-  }
   .nav-menu__divisor {
     font-family: "Raleway", sans-serif;
     font-size: 25px;
     color: rgba(0, 0, 0, 0.3);
+  }
+  .nav-animation {
+    color: #e30613;
+    text-shadow: 2.3px 2.3px 3px #888888;
   }
   .main {
     /* GRID DEL BODY */
@@ -492,7 +512,6 @@
     grid-row: 4/5;
     height: 300px;
     background-color: #001931;
-    margin-top: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -512,6 +531,12 @@
     font-family: "Raleway", sans-serif;
     color: #fff8e7;
   }
+  .rotate-animation {
+    -webkit-animation-name: social-icon;
+            animation-name: social-icon;
+    -webkit-animation-duration: 0.2s;
+            animation-duration: 0.2s;
+  }
   .social {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -521,35 +546,6 @@
         -ms-flex-direction: column;
             flex-direction: column;
     margin-bottom: 50px;
-  }
-  .social-linkedin {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: 20px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .social-linkedin__text {
-    font-family: "Raleway", sans-serif;
-    color: #fff8e7;
-    font-size: 25px;
-    margin: 0;
-  }
-  .social-linkedin__img {
-    height: 35px;
-    width: 35px;
-    fill: #fff8e7;
-    -webkit-transition: fill;
-    transition: fill;
-    -webkit-transition-duration: 0.5s;
-            transition-duration: 0.5s;
-    margin: 20px;
-    -webkit-animation-name: social-icon;
-            animation-name: social-icon;
-    -webkit-animation-duration: .2s;
-            animation-duration: .2s;
   }
   @-webkit-keyframes social-icon {
     0% {
@@ -642,6 +638,31 @@
       -webkit-transform: rotate(360deg);
               transform: rotate(360deg);
     }
+  }
+  .social-linkedin {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .social-linkedin__text {
+    font-family: "Raleway", sans-serif;
+    color: #fff8e7;
+    font-size: 25px;
+    margin: 0;
+  }
+  .social-linkedin__img {
+    height: 35px;
+    width: 35px;
+    fill: #fff8e7;
+    -webkit-transition: fill;
+    transition: fill;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    margin: 20px;
   }
   .social-linkedin__img:hover {
     fill: #e30613;
