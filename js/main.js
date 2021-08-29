@@ -1,20 +1,31 @@
+/* CLASES */
+class SkillDescription {
+    constructor(skill) {
+        this.skill = skill;
+        this.description;
+    }
+}
+
 // VARIABLES
 
-/* Nav menu */
 const navMenu = document.querySelector('.nav-menu');
-/* Hero introduction */
 const heroIntroduction = document.querySelector('.hero-introduction');
-/* About me */
 const aboutMe = document.querySelector('.about-me');
-/* Skills */
 const skills = document.querySelector('.skills');
-/* Projects */
 const projects = document.querySelector('.projects');
-/* Contact */
 const contact = document.querySelector('.contact');
-
+const upArrowBtn = document.querySelector('.arrow');
+const header = document.querySelector('.header');
+const descriptionContainer = document.querySelector('.skills-description');
+const skillsItems = document.querySelectorAll('.skills-list__item');
+const emailInput = document.querySelector('.email');
+const subjectInput = document.querySelector('.subject');
+const messageInput = document.querySelector('.message');
+const mobileSkills = document.querySelectorAll('.skill');
 const linkedin = document.querySelector('.social-linkedin');
 const github = document.querySelector('.social-github');
+const menuButton = document.querySelector('.mobile-menu');
+const mobileMenu = document.querySelector('.mobile-options');
 
 window.addEventListener('load', () => {
     if(!heroIntroduction.style.opacity) {
@@ -42,8 +53,7 @@ window.addEventListener('scroll', () => {
 
 /* LINKEDIN EFECT */
 linkedin.addEventListener('mouseover', (e) => {
-    // console.log(e.target);
-    if(e.target.classList == 'social-linkedin__text') {
+    if(e.target.classList == 'social-linkedin__link') {
         linkedin.children[0].classList.add('rotate-animation');
     }
 })
@@ -54,7 +64,7 @@ linkedin.addEventListener('mouseout', () => {
 
 /* GITHUB EFECT */
 github.addEventListener('mouseover', (e) => {
-    if(e.target.classList == 'social-github__text') {
+    if(e.target.classList == 'social-github__link') {
         github.children[0].classList.add('rotate-animation');
     }
 })
@@ -110,7 +120,6 @@ window.addEventListener('scroll', () => {
 
 
 /* NAV ITEMS HOVER EFFECT  */
-
 /* ABOUT */
 navMenu.children[0].children[0].addEventListener('mouseover', () => {
     if(!navMenu.children[0].children[0].classList.contains('nav-animation')) {
@@ -179,3 +188,139 @@ navMenu.children[6].children[0].addEventListener('mouseout', () => {
     }
 })
 
+/* MOBILE SKILL */
+mobileSkills.forEach(skill => {
+    skill.addEventListener('click', () => {
+        skill.classList.toggle('active');
+    })
+})
+
+/* MOBILE MENU BUTTON */
+menuButton.addEventListener('click', () => {
+    menuButton.querySelectorAll("span").forEach(span => {
+        span.classList.toggle('open');
+    })
+    mobileMenu.classList.toggle('open')
+})
+
+/* TO SECTION */
+contact.addEventListener('click', () => {
+    // window.scrollTo({
+    //     top: 2520,
+    //     left: 0,
+    //     behavior: "smooth"
+    // })
+    console.log('f')
+})
+
+// window.addEventListener('scroll', () => {
+//     console.log(window.scrollY)
+// })
+
+/* UP ARROW BUTTON */
+/* Arreglar que el botón se desvanezca cuando sube */
+window.addEventListener('scroll', () => {
+    const headerUbication = header.getBoundingClientRect();
+
+    if(headerUbication.top < 190) {
+        if(upArrowBtn.classList.contains('arrow-desanimation')) {
+            upArrowBtn.classList.remove('arrow-desanimation');
+            upArrowBtn.classList.add('arrow-animation');
+            upArrowBtn.style.opacity = 1;
+        } else {
+            upArrowBtn.classList.add('arrow-animation');
+            upArrowBtn.style.opacity = 1;
+        } 
+    } else {
+        if(upArrowBtn.classList.contains('arrow-animation')) {
+            upArrowBtn.classList.add('desanimation-arrow');
+            upArrowBtn.classList.remove('arrow-animation');
+            upArrowBtn.style.opacity = 0;
+        } else {
+            upArrowBtn.classList.add('desanimation-arrow');
+            upArrowBtn.style.opacity = 0;
+        }
+    }
+})
+
+/* ENVÍA AL USUARIO AL TOP DE LA PÁGINA */
+upArrowBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+})
+
+
+/* SKILLS DESCRIPTIONS */
+// console.log(skillsItems.length);
+console.log(skillsItems[0].children[1]);
+
+for(let i = 0; i < skillsItems.length; i++) {
+    skillsItems[i].addEventListener('click', (e) => {
+        console.log(e.target);
+
+        if(e.target == skillsItems[i].children[1]) {
+            console.log(skillsItems[i].children[1].textContent)
+            createDescription(i);
+        }
+    })
+}
+
+/* CREATE A DESCRIPTION */
+function createDescription(i) {
+    const skillTiltle = skillsItems[i].children[1].textContent;
+    const descriptionItem = new SkillDescription(skillTiltle);
+    console.log(descriptionItem)
+    return descriptionItem;
+}
+
+/* CREATES HTML DESCRIPTION */
+// function descriptionHTML() {
+//     switch(skillsItems[i].children[1].textContent) {
+//         case 'HTML': 
+
+//         case 
+//     }
+// }
+
+
+
+/* CONTACT */
+emailInput.addEventListener('blur', (e) => {
+    e.preventDefault();
+    if(e.target.value.length === 0) {
+        console.log('Todos los campos son obligatorios');
+        emailInput.classList.add('error');
+    } else {
+        if(e.target.value.includes('@')) {
+            console.log(e.target.value);
+            emailInput.classList.add('validate');
+        } else {
+            console.log('El dato ingresado no es un mail');
+            emailInput.classList.add('error');
+        }
+    }
+})
+
+subjectInput.addEventListener('blur', (e) => {
+    e.preventDefault();
+    if(e.target.value.length === 0) {
+        console.log('Todos los campos son obligatorios');
+        subjectInput.classList.add('error');
+    } else {
+        console.log(e.target.value);
+        subjectInput.classList.add('validate');
+    }
+})
+
+messageInput.addEventListener('blur', (e) => {
+    e.preventDefault();
+    if(e.target.value.length === 0) {
+        console.log('Todos los campos son obligatorios');
+    } else {
+        console.log(e.target.value);
+    }
+})
