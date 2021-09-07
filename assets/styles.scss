@@ -1,12 +1,10 @@
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
 
 /* VARIABLES */
-// $azul: #001931;
-// $azul: 	#071236;
 $azul: #131928;
 $rojo: #e30613;
-// $crema: #fff8e7;
 $crema: #F5F5DC;
 $sombra: rgb(136, 136, 136);
 $letter: "Raleway", sans-serif;
@@ -29,7 +27,8 @@ $letter: "Raleway", sans-serif;
   }
 
   /* HERO */
-  .hero {
+  .hero,
+  .tablet-nav {
     display: none;
   }
 
@@ -44,7 +43,7 @@ $letter: "Raleway", sans-serif;
     border-bottom: 3px solid $rojo;
 
     &-title {
-      font-size: 25px;
+      font-size: 20px;
       color: $crema;
       margin-left: 20px;
     }
@@ -104,6 +103,61 @@ $letter: "Raleway", sans-serif;
     }
   }
 
+  /* MOBILE MENU OPTIONS */
+  .mobile-options {
+    position: fixed;
+    min-height: 400px;
+    width: 100%;
+    right: -600px;
+    transition-property: all;
+    transition-duration: .37s;
+    top: 103px;
+    background: rgba(19, 25, 40, 0.99);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: auto;
+    
+    & ul {
+      padding: 0;
+      
+      & li {
+        list-style: none;
+        margin: 20px 0;
+        
+        & a {
+          text-decoration: none;
+          color: $crema;
+          font-size: 20px;
+        }
+      }
+    }
+    
+    & div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(227, 6, 19, 0.99);
+      width: 100%;
+      height: 70px;
+    }
+    
+    &__social {
+      font-size: 20px;
+      text-decoration: none;
+      color: $crema;
+      margin: 5px 10px;
+    }
+  }
+  
+  .mobile-options.open {
+    right: 0;
+    display: flex;
+    position: absolute;
+  }
+
   /* MAIN */
   .main {
     grid-column: 1/2;
@@ -121,6 +175,17 @@ $letter: "Raleway", sans-serif;
       margin: 0 20px;
       text-align: justify;
       color: $azul;
+    }
+
+    &__pdf {
+      color: $rojo;
+      text-decoration: none;
+    }
+
+    &__img {
+      height: 15px;
+      width: 15px;
+      fill: $rojo;
     }
   }
 
@@ -184,59 +249,6 @@ $letter: "Raleway", sans-serif;
     }
   }
 
-  .mobile-options {
-    position: fixed;
-    min-height: 400px;
-    width: 100%;
-    right: -320px;
-    transition-property: all;
-    transition-duration: .3s;
-    top: 103px;
-    background: rgba(19, 25, 40, 0.99);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    overflow-y: auto;
-
-    & ul {
-      padding: 0;
-
-      & li {
-        list-style: none;
-        margin: 20px 0;
-
-        & a {
-          text-decoration: none;
-          color: $crema;
-          font-size: 20px;
-        }
-      }
-    }
-
-    & div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(227, 6, 19, 0.99);
-      width: 100%;
-      height: 70px;
-    }
-
-    &__social {
-      font-size: 20px;
-      text-decoration: none;
-      color: $crema;
-      margin: 5px 10px;
-    }
-  }
-
-  .mobile-options.open {
-    right: 0;
-    display: flex;
-  }
-
   /* SKILLS */
   .skills {
     display: none;
@@ -245,12 +257,12 @@ $letter: "Raleway", sans-serif;
   /* FOOTER */
   .footer {
     background-color: $azul;
-    grid-template-columns: 1/2;
+    grid-column: 1/2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     &-title {
       color: $crema;
     }
@@ -362,6 +374,103 @@ $letter: "Raleway", sans-serif;
 }
 
 /* TABLET */
+@media screen and (min-width: 600px) {
+  .mobile-menu,
+  .mobile-options,
+  .nav,
+  .nav-menu {
+    display: none;
+  }
+
+  /* HEADER */
+  .header {
+    height: 120px;
+
+    &-title {
+      font-size: 25px;
+    }
+  }
+
+  /* TABLET NAV */
+  .tablet {
+
+    &-nav {
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    &-menu {
+      display: flex;
+      list-style: none;
+
+      &__link {
+        text-decoration: none;
+        font-family: $letter;
+        font-size: 22px;
+        margin: 0 10px;
+        transition: color, text-shadow;
+        transition-duration: 0.5s;
+        color: $crema;
+      }
+
+      &__divisor {
+        font-family: $letter;
+        font-size: 25px;
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  /* ABOUT SECTION */
+  .about-me {
+    &__title {
+      font-size: 25px;
+    }
+
+    &__description {
+      font-size: 20px;
+    }
+  }
+
+  /* SKILLS SECTION */
+  .mobile-skill {
+    &__title {
+      font-size: 25px;
+    }
+  }
+
+  .skill {
+    &-title p,
+    &-description p {
+      font-size: 20px;
+    }
+  }
+
+  /* CONTACT */
+  .contact {
+    &-title {
+      font-size: 25px;
+    }
+
+    &-form {
+      &__label {
+        font-size: 20px;
+      }
+
+      &__input {
+        height: 25px;
+      }
+    }
+  }
+
+  /* FOOTER */
+  .footer {
+    &-data {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}
 
 /* DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
@@ -405,12 +514,14 @@ $letter: "Raleway", sans-serif;
     }
 
     &:before {
-      content: "RODRIGO";
-      font-size: 15vw;
+      content: "FRONT-END";
+      font-size: 10vw;
       position: absolute;
-      font-family: $letter;
+      // font-family: $letter;
+      font-family: 'Nunito Sans', sans-serif;
       -webkit-text-stroke: 2px white;
       color: transparent;
+      // color: $crema;
       top: 0;
       left: 0;
       animation-name: introduction-before;
@@ -427,14 +538,16 @@ $letter: "Raleway", sans-serif;
     }
 
     &:after {
-      content: "BLANCA";
-      font-size: 15vw;
+      content: "DEVELOPER";
+      font-size: 10vw;
       position: absolute;
-      font-family: $letter;
+      // font-family: $letter;
+      font-family: 'Nunito Sans', sans-serif;
       -webkit-text-stroke: 2px $rojo;
       color: transparent;
+      // color: $rojo;
       bottom: 0;
-      right: 0;
+      right: 5px;
       animation-name: introduction-after;
       animation-duration: 1s;
     }
@@ -481,7 +594,8 @@ $letter: "Raleway", sans-serif;
   }
 
   .mobile-menu, 
-  .mobile-options {
+  .mobile-options,
+  .tablet-nav {
     display: none;
   }
 
@@ -571,7 +685,7 @@ $letter: "Raleway", sans-serif;
     }
 
     &__description {
-      font-size: 25px;
+      font-size: 20px;
       font-family: $letter;
       text-align: justify;
       margin: 0;
@@ -619,7 +733,7 @@ $letter: "Raleway", sans-serif;
 
       &__item {
         font-family: $letter;
-        font-size: 25px;
+        font-size: 20px;
         display: flex;
         align-items: center;
         margin-bottom: 30px;
@@ -655,6 +769,7 @@ $letter: "Raleway", sans-serif;
     grid-column: 2/9;
     grid-row: 3/4;
     margin-bottom: 25px;
+    display: block;
 
     &-title {
       font-family: $letter;
@@ -677,30 +792,58 @@ $letter: "Raleway", sans-serif;
     justify-content: space-evenly;
     transition-property: box-shadow;
     transition-duration: 0.5s;
+    box-shadow: 5px 5px 6px $sombra;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 1s;
 
     &:hover {
-      box-shadow: 8px 8px 8px $sombra;
+      box-shadow: 5px 5px 6px $rojo;
     }
 
-    &__page,
-    &__repository {
+    &__title {
+      font-size: 25px;
+      color: $crema;
+      margin-top: 150px;
+    }
+
+    & div {
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & div &__page,
+    & div &__repository {
       font-family: $letter;
+      display: inline-block;
       font-size: 15px;
       height: 35px;
-      width: 110px;
-      margin-bottom: 10px;
+      width: 100px;
+      margin: 0 20px;
       background-color: $rojo;
       border: 0;
       color: $crema;
       transition-property: background-color, color, border;
       transition-duration: 0.7s;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         color: $rojo;
         background-color: $crema;
-        // border: 1px solid $rojo;
       }
     }
+  }
+
+  .todo {
+    background: url(../assets/img/todo-app.jpg) 50%;
+    background-size: cover;
   }
 
   /* CONTACT SECTION*/
@@ -1046,4 +1189,54 @@ $letter: "Raleway", sans-serif;
     height: 400px;
     width: 300px;
   }
+
+  // .card {
+  //   height: 400px;
+  //   width: 300px;
+  //   background-color: $azul;
+  //   box-shadow: 0 8px 8px $sombra;
+  //   cursor: pointer;
+  //   object-fit: cover;
+  // }
+
+  // .front,
+  // .back {
+  //   overflow: hidden;
+  //   backface-visibility: hidden;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   transition: transform .6s linear;
+  //   background: $azul;
+  //   position: absolute;
+  // }
+  
+  // .front img {
+  //   height: 400px;
+  //   display: block;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+  
+  // .front {
+  //   transform: perspective(600px) rotateY(0deg);
+  // }
+  
+  // .back {
+  //   transform: perspective(600px) rotateY(180deg);
+    
+  //   &-content {
+  //     color: $crema;
+  //     text-align: center;
+  //     width: 100%;
+  //   }
+  // }
+
+  // .card:hover > .front {
+  //   transform: perspective(600px) rotateY(-180deg);
+  // }
+
+  // .card:hover > .back{
+  //   transform: perspective(600px) rotateY(0deg);
+  // }
 }

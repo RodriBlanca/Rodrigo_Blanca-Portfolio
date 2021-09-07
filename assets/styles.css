@@ -1,5 +1,6 @@
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap");
 /* VARIABLES */
 /* ESTILOS GENERALES */
 .body {
@@ -19,7 +20,8 @@
     font-family: "Raleway", sans-serif;
   }
   /* HERO */
-  .hero {
+  .hero,
+  .tablet-nav {
     display: none;
   }
   /* HEADER */
@@ -41,7 +43,7 @@
     border-bottom: 3px solid #e30613;
   }
   .header-title {
-    font-size: 25px;
+    font-size: 20px;
     color: #F5F5DC;
     margin-left: 20px;
   }
@@ -99,6 +101,76 @@
     -webkit-transform: translateX(-7px) rotate(45deg);
             transform: translateX(-7px) rotate(45deg);
   }
+  /* MOBILE MENU OPTIONS */
+  .mobile-options {
+    position: fixed;
+    min-height: 400px;
+    width: 100%;
+    right: -600px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .37s;
+            transition-duration: .37s;
+    top: 103px;
+    background: rgba(19, 25, 40, 0.99);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow-y: auto;
+  }
+  .mobile-options ul {
+    padding: 0;
+  }
+  .mobile-options ul li {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .mobile-options ul li a {
+    text-decoration: none;
+    color: #F5F5DC;
+    font-size: 20px;
+  }
+  .mobile-options div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: rgba(227, 6, 19, 0.99);
+    width: 100%;
+    height: 70px;
+  }
+  .mobile-options__social {
+    font-size: 20px;
+    text-decoration: none;
+    color: #F5F5DC;
+    margin: 5px 10px;
+  }
+  .mobile-options.open {
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+  }
   /* MAIN */
   .main {
     -ms-grid-column: 1;
@@ -115,6 +187,15 @@
     margin: 0 20px;
     text-align: justify;
     color: #131928;
+  }
+  .about-me__pdf {
+    color: #e30613;
+    text-decoration: none;
+  }
+  .about-me__img {
+    height: 15px;
+    width: 15px;
+    fill: #e30613;
   }
   /* NAV */
   .nav {
@@ -181,74 +262,6 @@
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
   }
-  .mobile-options {
-    position: fixed;
-    min-height: 400px;
-    width: 100%;
-    right: -320px;
-    -webkit-transition-property: all;
-    transition-property: all;
-    -webkit-transition-duration: .3s;
-            transition-duration: .3s;
-    top: 103px;
-    background: rgba(19, 25, 40, 0.99);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    overflow-y: auto;
-  }
-  .mobile-options ul {
-    padding: 0;
-  }
-  .mobile-options ul li {
-    list-style: none;
-    margin: 20px 0;
-  }
-  .mobile-options ul li a {
-    text-decoration: none;
-    color: #F5F5DC;
-    font-size: 20px;
-  }
-  .mobile-options div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: rgba(227, 6, 19, 0.99);
-    width: 100%;
-    height: 70px;
-  }
-  .mobile-options__social {
-    font-size: 20px;
-    text-decoration: none;
-    color: #F5F5DC;
-    margin: 5px 10px;
-  }
-  .mobile-options.open {
-    right: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
   /* SKILLS */
   .skills {
     display: none;
@@ -256,8 +269,9 @@
   /* FOOTER */
   .footer {
     background-color: #131928;
-    -ms-grid-columns: 1/2;
-        grid-template-columns: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -386,6 +400,83 @@
 }
 
 /* TABLET */
+@media screen and (min-width: 600px) {
+  .mobile-menu,
+  .mobile-options,
+  .nav,
+  .nav-menu {
+    display: none;
+  }
+  /* HEADER */
+  .header {
+    height: 120px;
+  }
+  .header-title {
+    font-size: 25px;
+  }
+  /* TABLET NAV */
+  .tablet-nav {
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .tablet-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+  }
+  .tablet-menu__link {
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 22px;
+    margin: 0 10px;
+    -webkit-transition: color, text-shadow;
+    transition: color, text-shadow;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    color: #F5F5DC;
+  }
+  .tablet-menu__divisor {
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.3);
+  }
+  /* ABOUT SECTION */
+  .about-me__title {
+    font-size: 25px;
+  }
+  .about-me__description {
+    font-size: 20px;
+  }
+  /* SKILLS SECTION */
+  .mobile-skill__title {
+    font-size: 25px;
+  }
+  .skill-title p,
+  .skill-description p {
+    font-size: 20px;
+  }
+  /* CONTACT */
+  .contact-title {
+    font-size: 25px;
+  }
+  .contact-form__label {
+    font-size: 20px;
+  }
+  .contact-form__input {
+    height: 25px;
+  }
+  /* FOOTER */
+  .footer-data {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 /* DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
   /* BODY */
@@ -450,10 +541,10 @@
     }
   }
   .hero:before {
-    content: "RODRIGO";
-    font-size: 15vw;
+    content: "FRONT-END";
+    font-size: 10vw;
     position: absolute;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     -webkit-text-stroke: 2px white;
     color: transparent;
     top: 0;
@@ -484,14 +575,14 @@
     }
   }
   .hero:after {
-    content: "BLANCA";
-    font-size: 15vw;
+    content: "DEVELOPER";
+    font-size: 10vw;
     position: absolute;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     -webkit-text-stroke: 2px #e30613;
     color: transparent;
     bottom: 0;
-    right: 0;
+    right: 5px;
     -webkit-animation-name: introduction-after;
             animation-name: introduction-after;
     -webkit-animation-duration: 1s;
@@ -558,7 +649,8 @@
     background-color: #131928;
   }
   .mobile-menu,
-  .mobile-options {
+  .mobile-options,
+  .tablet-nav {
     display: none;
   }
   /* NAV */
@@ -680,7 +772,7 @@
     }
   }
   .about-me__description {
-    font-size: 25px;
+    font-size: 20px;
     font-family: "Raleway", sans-serif;
     text-align: justify;
     margin: 0;
@@ -746,7 +838,7 @@
   }
   .skills-list__item {
     font-family: "Raleway", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -783,6 +875,7 @@
     -ms-grid-row-span: 1;
     grid-row: 3/4;
     margin-bottom: 25px;
+    display: block;
   }
   .projects-title {
     font-family: "Raleway", sans-serif;
@@ -816,17 +909,53 @@
     transition-property: box-shadow, -webkit-box-shadow;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
+    -webkit-box-shadow: 5px 5px 6px #888888;
+            box-shadow: 5px 5px 6px #888888;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: -webkit-box-shadow 1s;
+    transition: -webkit-box-shadow 1s;
+    transition: box-shadow 1s;
+    transition: box-shadow 1s, -webkit-box-shadow 1s;
   }
   .project-card:hover {
-    -webkit-box-shadow: 8px 8px 8px #888888;
-            box-shadow: 8px 8px 8px #888888;
+    -webkit-box-shadow: 5px 5px 6px #e30613;
+            box-shadow: 5px 5px 6px #e30613;
   }
-  .project-card__page, .project-card__repository {
+  .project-card__title {
+    font-size: 25px;
+    color: #F5F5DC;
+    margin-top: 150px;
+  }
+  .project-card div {
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .project-card div .project-card__page,
+  .project-card div .project-card__repository {
     font-family: "Raleway", sans-serif;
+    display: inline-block;
     font-size: 15px;
     height: 35px;
-    width: 110px;
-    margin-bottom: 10px;
+    width: 100px;
+    margin: 0 20px;
     background-color: #e30613;
     border: 0;
     color: #F5F5DC;
@@ -834,10 +963,25 @@
     transition-property: background-color, color, border;
     -webkit-transition-duration: 0.7s;
             transition-duration: 0.7s;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .project-card__page:hover, .project-card__repository:hover {
+  .project-card div .project-card__page:hover,
+  .project-card div .project-card__repository:hover {
     color: #e30613;
     background-color: #F5F5DC;
+  }
+  .todo {
+    background: url(../assets/img/todo-app.jpg) 50%;
+    background-size: cover;
   }
   /* CONTACT SECTION*/
   .contact {
