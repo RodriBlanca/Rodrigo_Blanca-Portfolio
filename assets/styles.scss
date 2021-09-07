@@ -16,6 +16,10 @@ $letter: "Raleway", sans-serif;
   background-color: $crema;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* MOBILE */
 @media screen and (min-width: 240px) {
 
@@ -770,6 +774,21 @@ $letter: "Raleway", sans-serif;
     grid-row: 3/4;
     margin-bottom: 25px;
     display: block;
+    opacity: 0;
+    
+    &-show {
+      animation-name: show-cards;
+      animation-duration: 1s;
+    }
+
+    @keyframes show-cards {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     &-title {
       font-family: $letter;
@@ -781,6 +800,8 @@ $letter: "Raleway", sans-serif;
       display: flex;
       justify-content: space-between;
     }
+
+
   }
 
   .project-card {

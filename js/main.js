@@ -51,6 +51,16 @@ window.addEventListener('scroll', () => {
     }
 });
 
+/* PROJECTS SECTION EFFECT */
+window.addEventListener('scroll', () => {
+    const projectsUbication = projects.getBoundingClientRect();
+    console.log(projectsUbication);
+    if(projectsUbication.top < 467) {
+        projects.style.opacity = 1;
+        projects.classList.add('projects-show');
+    }
+});
+
 /* LINKEDIN EFECT */
 linkedin.addEventListener('mouseover', (e) => {
     if(e.target.classList == 'social-linkedin__link') {

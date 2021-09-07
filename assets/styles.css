@@ -9,6 +9,10 @@
   background-color: #F5F5DC;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* MOBILE */
 @media screen and (min-width: 240px) {
   /* BODY */
@@ -876,6 +880,29 @@
     grid-row: 3/4;
     margin-bottom: 25px;
     display: block;
+    opacity: 0;
+  }
+  .projects-show {
+    -webkit-animation-name: show-cards;
+            animation-name: show-cards;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+  }
+  @-webkit-keyframes show-cards {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes show-cards {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   .projects-title {
     font-family: "Raleway", sans-serif;
