@@ -108,7 +108,7 @@ html {
   /* MOBILE MENU OPTIONS */
   .mobile-options {
     position: fixed;
-    min-height: 400px;
+    min-height: 500px;
     width: 100%;
     right: -600px;
     -webkit-transition-property: all;
@@ -401,6 +401,34 @@ html {
   textarea {
     resize: none;
   }
+  .certificate {
+    display: none;
+  }
+  .certificates-title {
+    margin: 25px 20px;
+    color: #e30613;
+  }
+  .mobile-certificates {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 10px 20px;
+  }
+  .mobile-certificate__img {
+    width: 100%;
+  }
+  .mobile-certificate__paragraph {
+    margin: 0 0 15px 0;
+    color: #131928;
+  }
+  .mobile-certificate__paragraph a {
+    text-decoration: none;
+    color: #e30613;
+  }
 }
 
 /* TABLET */
@@ -642,10 +670,21 @@ html {
     backdrop-filter: blur(6px);
     border-bottom: 0;
   }
+  @-moz-document url-prefix() {
+    .header {
+      background-color: #131928;
+      backdrop-filter: 0;
+    }
+  }
   .header-title {
     margin-left: 15px;
     color: #131928;
     font-size: 35px;
+  }
+  @-moz-document url-prefix() {
+    .header-title {
+      color: #F5F5DC;
+    }
   }
   .header-line__blue {
     height: 10px;
@@ -654,7 +693,8 @@ html {
   }
   .mobile-menu,
   .mobile-options,
-  .tablet-nav {
+  .tablet-nav,
+  .mobile-certificates {
     display: none;
   }
   /* NAV */
@@ -679,10 +719,20 @@ html {
             transition-duration: 0.5s;
     color: #131928;
   }
+  @-moz-document url-prefix() {
+    .nav-menu__link {
+      color: #F5F5DC;
+    }
+  }
   .nav-menu__divisor {
     font-family: "Raleway", sans-serif;
     font-size: 25px;
     color: rgba(0, 0, 0, 0.3);
+  }
+  @-moz-document url-prefix() {
+    .nav-menu__divisor {
+      color: #F5F5DC;
+    }
   }
   .nav-animation {
     color: #e30613;
@@ -701,8 +751,8 @@ html {
     display: grid;
     -ms-grid-columns: (1fr)[9];
         grid-template-columns: repeat(9, 1fr);
-    -ms-grid-rows: (0.5fr)[4];
-        grid-template-rows: repeat(4, 0.5fr);
+    -ms-grid-rows: (0.2fr)[4];
+        grid-template-rows: repeat(4, 0.2fr);
   }
   /* ABOUT ME SECTION*/
   .about-me {
@@ -743,13 +793,13 @@ html {
   }
   .about-me__title {
     font-family: "Raleway", sans-serif;
-    font-size: 45px;
+    font-size: 30px;
     color: #e30613;
     -webkit-animation-name: about-me__title;
             animation-name: about-me__title;
     -webkit-animation-duration: 0.5s;
             animation-duration: 0.5s;
-    margin: 0;
+    margin: 25px 0;
   }
   @-webkit-keyframes about-me__title {
     0% {
@@ -786,15 +836,16 @@ html {
     -ms-grid-column: 2;
     -ms-grid-column-span: 7;
     grid-column: 2/9;
-    -ms-grid-row: 2;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 1;
-    grid-row: 2/3;
+    grid-row: 3/4;
     margin-bottom: 50px;
-    width: 280px;
     opacity: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .skills-animation {
     -webkit-animation-name: skills-animation;
@@ -824,10 +875,15 @@ html {
   }
   .skills-title {
     font-family: "Raleway", sans-serif;
-    font-size: 45px;
+    font-size: 30px;
     color: #e30613;
   }
   .skills div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .skills-options {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -852,6 +908,12 @@ html {
     margin-bottom: 30px;
     color: #131928;
   }
+  .skills-list__item:hover {
+    cursor: pointer;
+  }
+  .skills-list__item:hover svg {
+    fill: #e30613;
+  }
   .skills-list__item p {
     margin: 0;
   }
@@ -862,9 +924,44 @@ html {
     fill: #131928;
   }
   .skills-description {
-    height: 1fr;
-    width: 1fr;
-    background-color: red;
+    margin-top: 100px;
+  }
+  .description-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 25px;
+  }
+  .description-item p {
+    margin: 13px 0;
+  }
+  .description-effect {
+    -webkit-animation-name: description-effect;
+            animation-name: description-effect;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+  }
+  @-webkit-keyframes description-effect {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes description-effect {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   /* MOBILE SKILL */
   .mobile-skill {
@@ -875,18 +972,18 @@ html {
     -ms-grid-column: 2;
     -ms-grid-column-span: 7;
     grid-column: 2/9;
-    -ms-grid-row: 3;
+    -ms-grid-row: 2;
     -ms-grid-row-span: 1;
-    grid-row: 3/4;
-    margin-bottom: 25px;
+    grid-row: 2/3;
     display: block;
     opacity: 0;
+    margin-bottom: 50px;
   }
   .projects-show {
     -webkit-animation-name: show-cards;
             animation-name: show-cards;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
   }
   @-webkit-keyframes show-cards {
     0% {
@@ -906,7 +1003,7 @@ html {
   }
   .projects-title {
     font-family: "Raleway", sans-serif;
-    font-size: 45px;
+    font-size: 30px;
     color: #e30613;
   }
   .projects-container {
@@ -943,9 +1040,9 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1006,26 +1103,34 @@ html {
     color: #e30613;
     background-color: #F5F5DC;
   }
-  .todo {
-    background: url(../assets/img/todo-app.jpg) 50%;
+  #proyecto1 {
+    background: url(./img/todo-mobile.jpg) 50%;
     background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #proyecto2 {
+    background: url(./img/js-web.png) 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
+  #proyecto3 {
+    background: url(./img/bonnie-web.jpg) 100%;
+    background-size: cover;
+    background-position-y: top;
+    background-repeat: no-repeat;
   }
   /* CONTACT SECTION*/
-  .contact {
+  /* CERTIFICATES */
+  .certificates {
     -ms-grid-column: 2;
     -ms-grid-column-span: 7;
     grid-column: 2/9;
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     grid-row: 4/5;
-    margin: 50px 0;
-  }
-  .contact-title {
-    font-family: "Raleway", sans-serif;
-    font-size: 45px;
-    color: #e30613;
-  }
-  .contact-form {
+    margin: 0;
+    margin-bottom: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1033,49 +1138,48 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 600px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  .contact-form__label {
-    font-size: 25px;
+  .certificates-title {
     font-family: "Raleway", sans-serif;
-    color: #131928;
-    margin: 5px 0;
+    font-size: 30px;
+    color: #e30613;
   }
-  .contact-form__input {
-    height: 25px;
-    font-size: 20px;
-    color: #131928;
-  }
-  .contact-form__message {
-    resize: none;
-    font-size: 20px;
-  }
-  .contact-button {
+  .certificate {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 15px;
   }
-  .contact-button__send, .contact-button__reset {
-    height: 30px;
-    width: 150px;
-    margin-top: 25px;
+  .certificate-img {
+    height: 250px;
   }
-  .contact-button__send:hover, .contact-button__reset:hover {
-    -webkit-box-shadow: 2px 2px 2px #888888;
-            box-shadow: 2px 2px 2px #888888;
+  .certificate-img__pic {
+    max-height: 100%;
   }
-  .contact-button__send {
-    background-color: #e30613;
-    color: #F5F5DC;
-    border: 1px solid #e30613;
+  .certificate-description {
+    text-align: justify;
+    height: 200px;
+    padding: 0 15px;
   }
-  .contact-button__reset {
-    background-color: #131928;
-    color: #F5F5DC;
-    border: 1px solid #131928;
+  .certificate-description__title {
+    margin: 5px 0;
+    font-size: 20px;
+  }
+  .certificate-description__paragraph a {
+    text-decoration: none;
+    color: #e30613;
   }
   /* ARROW */
   .arrow {

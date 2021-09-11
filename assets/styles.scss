@@ -110,7 +110,7 @@ html {
   /* MOBILE MENU OPTIONS */
   .mobile-options {
     position: fixed;
-    min-height: 400px;
+    min-height: 500px;
     width: 100%;
     right: -600px;
     transition-property: all;
@@ -375,6 +375,39 @@ html {
   textarea {
     resize: none;
   }
+
+  .certificate {
+    display: none;
+  }
+
+  .certificates-title {
+    margin: 25px 20px;
+    color: $rojo;
+  }
+
+  
+  .mobile{
+    &-certificates {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 20px;
+    }
+    &-certificate {
+      &__img {
+        width: 100%;
+      }
+
+      &__paragraph {
+        margin: 0 0 15px 0;
+        color: $azul;
+
+        & a {
+          text-decoration: none;
+          color: $rojo;
+        }
+      }
+    }
+  }
 }
 
 /* TABLET */
@@ -478,6 +511,7 @@ html {
 
 /* DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
+
   /* BODY */
   .body {
     display: grid;
@@ -584,10 +618,19 @@ html {
     backdrop-filter: blur(6px);
     border-bottom: 0;
 
+    @-moz-document url-prefix() {
+      background-color: $azul;
+      backdrop-filter: 0;
+    }
+
     &-title {
       margin-left: 15px;
       color: $azul;
       font-size: 35px;
+
+      @-moz-document url-prefix() {
+        color: $crema;
+      }
     }
 
     &-line__blue {
@@ -599,7 +642,8 @@ html {
 
   .mobile-menu, 
   .mobile-options,
-  .tablet-nav {
+  .tablet-nav,
+  .mobile-certificates {
     display: none;
   }
 
@@ -620,12 +664,20 @@ html {
         transition: color, text-shadow;
         transition-duration: 0.5s;
         color: $azul;
+
+        @-moz-document url-prefix() {
+          color: $crema;
+        }
       }
 
       &__divisor {
         font-family: $letter;
         font-size: 25px;
         color: rgba(0, 0, 0, 0.3);
+
+        @-moz-document url-prefix() {
+          color: $crema;
+        }
       }
     }
   }
@@ -643,7 +695,7 @@ html {
     /* GRID DEL MAIN */
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(4, 0.5fr);
+    grid-template-rows: repeat(4, 0.2fr);
   }
 
   /* ABOUT ME SECTION*/
@@ -670,11 +722,11 @@ html {
 
     &__title {
       font-family: $letter;
-      font-size: 45px;
+      font-size: 30px;
       color: $rojo;
       animation-name: about-me__title;
       animation-duration: 0.5s;
-      margin: 0;
+      margin: 25px 0;
 
       @keyframes about-me__title {
         0% {
@@ -699,11 +751,11 @@ html {
   /* SKILLS SECTION */
   .skills {
     grid-column: 2/9;
-    grid-row: 2/3;
+    grid-row: 3/4;
     margin-bottom: 50px;
-    width: 280px;
     opacity: 0;
     display: flex;
+    object-fit: cover;
 
     &-animation {
       animation-name: skills-animation;
@@ -722,11 +774,15 @@ html {
 
     &-title {
       font-family: $letter;
-      font-size: 45px;
+      font-size: 30px;
       color: $rojo;
     }
 
     & div {
+      display: flex;
+    }
+
+    &-options {
       display: flex;
       flex-direction: column;
     }
@@ -743,6 +799,14 @@ html {
         margin-bottom: 30px;
         color: $azul;
 
+        &:hover {
+          cursor: pointer;
+
+          & svg {
+            fill: $rojo;
+          }
+        }
+
         & p {
           margin: 0;
         }
@@ -757,9 +821,33 @@ html {
     }
 
     &-description {
-      height: 1fr;
-      width: 1fr;
-      background-color: red;
+      margin-top: 100px;
+    }
+  }
+
+  .description-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 25px;
+
+    & p {
+      margin: 13px 0;
+    }
+  }
+
+  .description-effect {
+    animation-name: description-effect;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes description-effect {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 
@@ -771,14 +859,14 @@ html {
   /* PROJECTS SECTION */
   .projects {
     grid-column: 2/9;
-    grid-row: 3/4;
-    margin-bottom: 25px;
+    grid-row: 2/3;
     display: block;
     opacity: 0;
+    margin-bottom: 50px;
     
     &-show {
       animation-name: show-cards;
-      animation-duration: 1s;
+      animation-duration: 2s;
     }
 
     @keyframes show-cards {
@@ -792,7 +880,7 @@ html {
 
     &-title {
       font-family: $letter;
-      font-size: 45px;
+      font-size: 30px;
       color: $rojo;
     }
 
@@ -816,7 +904,7 @@ html {
     box-shadow: 5px 5px 6px $sombra;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     transition: box-shadow 1s;
 
@@ -862,72 +950,138 @@ html {
     }
   }
 
-  .todo {
-    background: url(../assets/img/todo-app.jpg) 50%;
+  #proyecto1 {
+    background: url(./img/todo-mobile.jpg) 50%;
     background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #proyecto2 {
+    background: url(./img/js-web.png) 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
+
+  #proyecto3 {
+    background: url(./img/bonnie-web.jpg) 100%;
+    background-size: cover;
+    background-position-y: top;
+    background-repeat: no-repeat;
   }
 
   /* CONTACT SECTION*/
-  .contact {
+  // .contact {
+  //   grid-column: 2/9;
+  //   grid-row: 4/5;
+  //   margin: 50px 0;
+
+  //   &-title {
+  //     font-family: $letter;
+  //     font-size: 30px;
+  //     color: $rojo;
+  //   }
+
+  //   &-form {
+  //     display: flex;
+  //     flex-direction: column;
+  //     width: 600px;
+
+  //     &__label {
+  //       font-size: 25px;
+  //       font-family: $letter;
+  //       color: $azul;
+  //       margin: 5px 0;
+  //     }
+
+  //     &__input {
+  //       height: 25px;
+  //       font-size: 20px;
+  //       color: $azul;
+  //     }
+
+  //     &__message {
+  //       resize: none;
+  //       font-size: 20px;
+  //     }
+  //   }
+
+  //   &-button {
+  //     display: flex;
+  //     justify-content: space-between;
+
+  //     &__send,
+  //     &__reset {
+  //       height: 30px;
+  //       width: 150px;
+  //       margin-top: 25px;
+
+  //       &:hover {
+  //         box-shadow: 2px 2px 2px $sombra;
+  //       }
+  //     }
+
+  //     &__send {
+  //       background-color: $rojo;
+  //       color: $crema;
+  //       border: 1px solid $rojo;
+  //     }
+
+  //     &__reset {
+  //       background-color: $azul;
+  //       color: $crema;
+  //       border: 1px solid $azul;
+  //     }
+  //   }
+  // }
+
+  /* CERTIFICATES */
+  .certificates {
     grid-column: 2/9;
     grid-row: 4/5;
-    margin: 50px 0;
+    margin: 0;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     &-title {
       font-family: $letter;
-      font-size: 45px;
+      font-size: 30px;
       color: $rojo;
     }
+  }
 
-    &-form {
-      display: flex;
-      flex-direction: column;
-      width: 600px;
-
-      &__label {
-        font-size: 25px;
-        font-family: $letter;
-        color: $azul;
-        margin: 5px 0;
-      }
-
-      &__input {
-        height: 25px;
-        font-size: 20px;
-        color: $azul;
-      }
-
-      &__message {
-        resize: none;
-        font-size: 20px;
+  .certificate {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 15px;
+      
+    &-img{
+      height: 250px;
+      
+      &__pic {
+        max-height: 100%;
       }
     }
 
-    &-button {
-      display: flex;
-      justify-content: space-between;
+    &-description {
+      text-align: justify;
+      height: 200px;
+      padding: 0 15px;
+  
+      &__title {
+        margin: 5px 0;
+        font-size: 20px;
+      }
 
-      &__send,
-      &__reset {
-        height: 30px;
-        width: 150px;
-        margin-top: 25px;
-
-        &:hover {
-          box-shadow: 2px 2px 2px $sombra;
+      &__paragraph {
+        & a {
+          text-decoration: none;
+          color: $rojo;
         }
-      }
-
-      &__send {
-        background-color: $rojo;
-        color: $crema;
-        border: 1px solid $rojo;
-      }
-
-      &__reset {
-        background-color: $azul;
-        color: $crema;
-        border: 1px solid $azul;
       }
     }
   }
