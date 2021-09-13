@@ -1130,6 +1130,13 @@ html {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+
+    &-title {
+      color: $rojo;
+      font-size: 30px;
+      font-family: $letter;
+      margin: 20px 0;
+    }
   }
 
   .certificate {

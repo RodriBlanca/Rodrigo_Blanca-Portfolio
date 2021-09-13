@@ -1236,6 +1236,12 @@ html {
             flex-direction: column;
     margin-bottom: 50px;
   }
+  .certificates-title {
+    color: #e30613;
+    font-size: 30px;
+    font-family: "Raleway", sans-serif;
+    margin: 20px 0;
+  }
   .certificate {
     display: -webkit-box;
     display: -ms-flexbox;
