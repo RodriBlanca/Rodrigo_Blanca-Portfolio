@@ -1127,51 +1127,60 @@ html {
   .certificates {
     grid-column: 2/9;
     grid-row: 4/5;
-    margin: 0;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    &-title {
-      font-family: $letter;
-      font-size: 30px;
-      color: $rojo;
-    }
+    margin-bottom: 50px;
   }
 
   .certificate {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 15px;
-      
-    &-img{
-      height: 250px;
-      
-      &__pic {
-        max-height: 100%;
-      }
+    margin-bottom: 10px;
+    overflow: hidden;
+    
+    &-img {
+      height: 200px;
+      width: 300px;
     }
 
-    &-description {
-      text-align: justify;
-      height: 200px;
-      padding: 0 15px;
-  
-      &__title {
-        margin: 5px 0;
-        font-size: 20px;
-      }
-
+    &-text {
+      max-width: 70%;
+      
       &__paragraph {
+        margin: 5px 0px 0px 15px;
+
         & a {
-          text-decoration: none;
           color: $rojo;
         }
       }
     }
+  }
+
+  #javascript-certificate {
+    background: url(./img/certificado-javascript.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+
+  #desarrollo-certificate {
+    background: url(./img/certificado-desarrollo_web.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+
+  #responsive-certificate {
+    background: url(./img/certificado-responsive_web_design-freecodecamp.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+
+  #scrum-certificate {
+    background: url(./img/certificado-scrum.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
   }
 
   /* ARROW */

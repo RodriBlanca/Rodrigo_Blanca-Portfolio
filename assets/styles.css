@@ -1227,8 +1227,6 @@ html {
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     grid-row: 4/5;
-    margin: 0;
-    margin-bottom: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1236,48 +1234,51 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .certificates-title {
-    font-family: "Raleway", sans-serif;
-    font-size: 30px;
-    color: #e30613;
+    margin-bottom: 50px;
   }
   .certificate {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
   }
   .certificate-img {
-    height: 250px;
-  }
-  .certificate-img__pic {
-    max-height: 100%;
-  }
-  .certificate-description {
-    text-align: justify;
     height: 200px;
-    padding: 0 15px;
+    width: 300px;
   }
-  .certificate-description__title {
-    margin: 5px 0;
-    font-size: 20px;
+  .certificate-text {
+    max-width: 70%;
   }
-  .certificate-description__paragraph a {
-    text-decoration: none;
+  .certificate-text__paragraph {
+    margin: 5px 0px 0px 15px;
+  }
+  .certificate-text__paragraph a {
     color: #e30613;
+  }
+  #javascript-certificate {
+    background: url(./img/certificado-javascript.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+  #desarrollo-certificate {
+    background: url(./img/certificado-desarrollo_web.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+  #responsive-certificate {
+    background: url(./img/certificado-responsive_web_design-freecodecamp.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+  #scrum-certificate {
+    background: url(./img/certificado-scrum.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
   }
   /* ARROW */
   .arrow {
