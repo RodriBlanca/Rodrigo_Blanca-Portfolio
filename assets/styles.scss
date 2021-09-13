@@ -167,6 +167,56 @@ html {
     grid-column: 1/2;
   }
 
+  .mobile-projects__title {
+    margin-left: 20px;
+    color: $rojo;
+  }
+
+  .project-card {
+    height: 400px;
+    margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    & div {
+      display: flex;
+      justify-content: center;
+
+      & a {
+        margin: 0 20px 10px 20px;
+        text-decoration: none;
+        background-color: $rojo;
+        color: $crema;
+        padding: 10px 20px;
+        display: inline-block;
+        width: 80px;
+        text-align: center;
+      }
+    }
+  }
+
+  #proyecto1 {
+    background: url(./img/js-web.png) 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
+
+  #proyecto2 {
+    background: url(./img/todo-mobile.jpg) 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
+
+  #proyecto3 {
+    background: url(./img/bonnie-web.jpg) 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
+
   .about-me {
     &__title {
       font-size: 20px;
@@ -415,7 +465,8 @@ html {
   .mobile-menu,
   .mobile-options,
   .nav,
-  .nav-menu {
+  .nav-menu,
+  .mobile-projects {
     display: none;
   }
 
@@ -468,6 +519,43 @@ html {
       font-size: 20px;
     }
   }
+
+  /* PROJECTS */
+  .projects {
+    display: flex;
+    flex-direction: column;
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-title {
+      margin: 20px 20px;
+      font-size: 25px;
+      color: $rojo;
+    }
+  }
+
+  .project {
+    &-card {
+      height: 400px;
+      width: 200px;
+
+      & div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  #proyecto1,
+  #proyecto2,
+  #proyecto3 {
+    background-position-x: center;
+  }
+
 
   /* SKILLS SECTION */
   .mobile-skill {
@@ -643,7 +731,8 @@ html {
   .mobile-menu, 
   .mobile-options,
   .tablet-nav,
-  .mobile-certificates {
+  .mobile-certificates,
+  .mobile-projects {
     display: none;
   }
 
@@ -882,6 +971,7 @@ html {
       font-family: $letter;
       font-size: 30px;
       color: $rojo;
+      margin: 20px 0;
     }
 
     &-container {
@@ -896,9 +986,6 @@ html {
     height: 400px;
     width: 250px;
     background-color: $azul;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
     transition-property: box-shadow;
     transition-duration: 0.5s;
     box-shadow: 5px 5px 6px $sombra;
@@ -907,32 +994,25 @@ html {
     justify-content: flex-end;
     align-items: center;
     transition: box-shadow 1s;
+    margin: 0;
 
     &:hover {
       box-shadow: 5px 5px 6px $rojo;
     }
 
-    &__title {
-      font-size: 25px;
-      color: $crema;
-      margin-top: 150px;
-    }
-
     & div {
       height: 60px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      flex-direction: row;
     }
 
     & div &__page,
     & div &__repository {
       font-family: $letter;
-      display: inline-block;
       font-size: 15px;
-      height: 35px;
-      width: 100px;
-      margin: 0 20px;
+      margin: 0 10px;
       background-color: $rojo;
       border: 0;
       color: $crema;
@@ -948,6 +1028,14 @@ html {
         background-color: $crema;
       }
     }
+
+    & div a {
+      display: inline-block;
+      margin: 0 20px;
+      padding: 0;
+      height: 30px;
+      width: 100px;
+    }
   }
 
   #proyecto1 {
@@ -957,7 +1045,7 @@ html {
   }
 
   #proyecto2 {
-    background: url(./img/js-web.png) 50%;
+    background: url(./img/js-web.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;

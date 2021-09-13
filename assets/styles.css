@@ -181,6 +181,59 @@ html {
     -ms-grid-column-span: 1;
     grid-column: 1/2;
   }
+  .mobile-projects__title {
+    margin-left: 20px;
+    color: #e30613;
+  }
+  .project-card {
+    height: 400px;
+    margin: 10px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .project-card div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .project-card div a {
+    margin: 0 20px 10px 20px;
+    text-decoration: none;
+    background-color: #e30613;
+    color: #F5F5DC;
+    padding: 10px 20px;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+  }
+  #proyecto1 {
+    background: url(./img/js-web.png) 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
+  #proyecto2 {
+    background: url(./img/todo-mobile.jpg) 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
+  #proyecto3 {
+    background: url(./img/bonnie-web.jpg) 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
   .about-me__title {
     font-size: 20px;
     color: #e30613;
@@ -436,7 +489,8 @@ html {
   .mobile-menu,
   .mobile-options,
   .nav,
-  .nav-menu {
+  .nav-menu,
+  .mobile-projects {
     display: none;
   }
   /* HEADER */
@@ -479,6 +533,51 @@ html {
   }
   .about-me__description {
     font-size: 20px;
+  }
+  /* PROJECTS */
+  .projects {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projects-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .projects-title {
+    margin: 20px 20px;
+    font-size: 25px;
+    color: #e30613;
+  }
+  .project-card {
+    height: 400px;
+    width: 200px;
+  }
+  .project-card div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #proyecto1,
+  #proyecto2,
+  #proyecto3 {
+    background-position-x: center;
   }
   /* SKILLS SECTION */
   .mobile-skill__title {
@@ -694,7 +793,8 @@ html {
   .mobile-menu,
   .mobile-options,
   .tablet-nav,
-  .mobile-certificates {
+  .mobile-certificates,
+  .mobile-projects {
     display: none;
   }
   /* NAV */
@@ -1005,6 +1105,7 @@ html {
     font-family: "Raleway", sans-serif;
     font-size: 30px;
     color: #e30613;
+    margin: 20px 0;
   }
   .projects-container {
     display: -webkit-box;
@@ -1018,15 +1119,6 @@ html {
     height: 400px;
     width: 250px;
     background-color: #131928;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
     -webkit-transition-property: -webkit-box-shadow;
     transition-property: -webkit-box-shadow;
     transition-property: box-shadow;
@@ -1035,6 +1127,8 @@ html {
             transition-duration: 0.5s;
     -webkit-box-shadow: 5px 5px 6px #888888;
             box-shadow: 5px 5px 6px #888888;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1050,36 +1144,33 @@ html {
     transition: -webkit-box-shadow 1s;
     transition: box-shadow 1s;
     transition: box-shadow 1s, -webkit-box-shadow 1s;
+    margin: 0;
   }
   .project-card:hover {
     -webkit-box-shadow: 5px 5px 6px #e30613;
             box-shadow: 5px 5px 6px #e30613;
-  }
-  .project-card__title {
-    font-size: 25px;
-    color: #F5F5DC;
-    margin-top: 150px;
   }
   .project-card div {
     height: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .project-card div .project-card__page,
   .project-card div .project-card__repository {
     font-family: "Raleway", sans-serif;
-    display: inline-block;
     font-size: 15px;
-    height: 35px;
-    width: 100px;
-    margin: 0 20px;
+    margin: 0 10px;
     background-color: #e30613;
     border: 0;
     color: #F5F5DC;
@@ -1103,13 +1194,20 @@ html {
     color: #e30613;
     background-color: #F5F5DC;
   }
+  .project-card div a {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 0;
+    height: 30px;
+    width: 100px;
+  }
   #proyecto1 {
     background: url(./img/todo-mobile.jpg) 50%;
     background-size: cover;
     background-repeat: no-repeat;
   }
   #proyecto2 {
-    background: url(./img/js-web.png) 50%;
+    background: url(./img/js-web.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;

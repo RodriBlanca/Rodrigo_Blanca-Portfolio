@@ -33,7 +33,12 @@ const gitItem = document.getElementById('git-item');
 const englishItem = document.getElementById('english-item');
 const skillsContainer = document.getElementById('skills-description');
 const aboutMobileButton = document.getElementById('about-menu');
-const mobileMenu = document.getElementById('mobile-menu');
+const skillsMobileButton = document.getElementById('skills-menu');
+const projectsMobileButton = document.getElementById('projects-menu');
+const certificatesMobileButton = document.getElementById('certificates-menu');
+const topLine = document.getElementsByClassName('top-line');
+const midLine = document.getElementsByClassName('mid-line');
+const bottomLine = document.getElementsByClassName('bottom-line');
 
 window.addEventListener('load', () => {
     if(!heroIntroduction.style.opacity) {
@@ -97,7 +102,6 @@ window.addEventListener('scroll', () => {
     const skillsUbication = skills.getBoundingClientRect();
     const projectsUbication = projects.getBoundingClientRect();
     const certificatesUbication = certificates.getBoundingClientRect();
-    console.log(certificatesUbication);
 
     /* ABOUT */
     if(aboutMeUbication.top < 446 && aboutMeUbication.top > -230) {
@@ -275,12 +279,20 @@ upArrowBtn.addEventListener('click', (e) => {
 /* SKILLS DESCRIPTIONS */
 for(let i = 0; i < skillsItems.length; i++) {
     skillsItems[i].addEventListener('click', (e) => {
-        console.log(e.target);
-
         if(e.target == skillsItems[i].children[1]) {
             console.log(skillsItems[i].children[1].textContent)
             createDescription(i);
         }
+    })
+}
+
+/* MOBILE MENU EFFECT */
+for(let i = 0; i <= mobileMenu.children[0].children.length; i++) {
+    mobileMenu.children[i].addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        topLine[0].classList.toggle('open')
+        midLine[0].classList.toggle('open');
+        bottomLine[0].classList.toggle('open');
     })
 }
 
@@ -315,7 +327,7 @@ function descriptionHTML(skill) {
             cssDescription.innerHTML = `
                 <p class="skills-description__item">De igual forma que con HTML, comencé a estudiar CSS de manera autodidácta. Dichos conocimientos me fueron útiles para obtener el certificado en Desarrollo Web en Coderhouse.<br>
                 Al ser el diseño una de las cosas que más me apasionan del desarrollo front-end, sigo aprendiendo mediante cursos en Udemy nuevas técnicas para mejorar el apartado visual de mis sitios web.<br>
-                Cuento con conocimientos en box-modeling, pseudo-clases, media queries, flexbox, grid y animaciónes.</p>
+                Poseo conocimientos en box-modeling, pseudo-clases, media queries, flexbox, grid y animaciónes.</p>
             `;
             skillsContainer.appendChild(cssDescription);
             break;
@@ -339,7 +351,7 @@ function descriptionHTML(skill) {
             sassDescription.classList.add('description-effect');
             sassDescription.classList.add('description-item');
             sassDescription.innerHTML = `
-                <p class="skills-description__item">Aprendí Sass en el curso de Desarrollador Web de Coderhouse y es una herramienta que sigo utilizando a día de hoy en todos mis proyectos.</p>
+                <p class="skills-description__item">Aprendí Sass en el curso de Desarrollador Web de Coderhouse y es una herramienta que sigo utilizando a día de hoy en todos mis proyectos. Cuento con conocimientos en variables, mixins y extends.</p>
             `;
             skillsContainer.appendChild(sassDescription);
             break;
@@ -355,9 +367,23 @@ function descriptionHTML(skill) {
             break;
         case 'GIT':
             gitItem.style.color = '#e30613'; 
+            const gitDescription = document.createElement('div');
+            gitDescription.classList.add('description-effect');
+            gitDescription.classList.add('description-item');
+            gitDescription.innerHTML = `
+                <p class="skills-description__item">Conocimiento en manejo de repositorio local y remoto, manejo de git branchs, merge y github pages.</p>
+            `;
+            skillsContainer.appendChild(gitDescription);
             break;  
         case 'ENGLISH':
             englishItem.style.color = '#e30613';
+            const englishDescription = document.createElement('div');
+            englishDescription.classList.add('description-effect');
+            englishDescription.classList.add('description-item');
+            englishDescription.innerHTML = `
+                <p class="skills-description__item">Cuento con un nivel intermedio de inglés, tanto en oral como en escrito. Actualmente me encuentro estudiando para rendir el 6to año en Cambridge.</p>
+            `;
+            skillsContainer.appendChild(englishDescription);
             break;
     }
 }
@@ -414,7 +440,3 @@ function clearDescription() {
 //     }
 // })
 
-/* MOBILE MENÚ */
-aboutMobileButton.addEventListener('click', () => {
-    console.log('funciona');
-})
